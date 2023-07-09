@@ -23,7 +23,12 @@ var ball = {
 right_wristX=0;
 right_wristY=0;
 right_wrist_score=0;
+game_status="";
 
+function start_game(){
+  game_status="start";
+  document.getElementById("status").innerHTML = "Game is Loaded";
+}
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.parent("canvas");
@@ -47,6 +52,7 @@ if(results.length>0){
 }
 
 function draw(){
+  if(game_status=="start"){
 
  background(0);  
 image(video, 0,0, 700, 600);
@@ -91,6 +97,7 @@ if(right_wrist_score>0.2){
    
    //function move call which in very important
     move();
+}
 }
 
 
